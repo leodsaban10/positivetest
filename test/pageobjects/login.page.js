@@ -43,7 +43,27 @@ class LoginPage extends Page {
         await expect(this.errorMessage).toExist();
     }
 
-    async positiveLogin(username, password) {
+    async firstUserLogin(username, password) {
+        await this.login(username, password)
+        await expect(this.headerProducts).toExist();
+    }
+    async secondUserLogin(username, password) {
+        await this.login(username, password)
+        await expect(this.headerProducts).toExist();
+    }
+    async thirdUserLogin(username, password) {
+        await this.login(username, password)
+        await expect(this.headerProducts).toExist();
+    }
+    async fourthUserLogin(username, password) {
+        await this.login(username, password)
+        await expect(this.headerProducts).toExist();
+    }
+    async fifthUserLogin(username, password) {
+        await this.login(username, password)
+        await expect(this.headerProducts).toExist();
+    }
+    async sixthtUserLogin(username, password) {
         await this.login(username, password)
         await expect(this.headerProducts).toExist();
     }

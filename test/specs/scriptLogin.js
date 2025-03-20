@@ -16,7 +16,13 @@ describe('SauceDemo Login Test', () => {
         // await loginButton.click(); // Click login button
 
         LoginPage.open() 
-        LoginPage.positiveLogin('standard_user', 'secret_sauce') // Login with valid credentials
+        LoginPage.firstUserLogin('standard_user', 'secret_sauce')
+        LoginPage.secondUserLogin('locked_out_user', 'secret_sauce')
+        LoginPage.thirdUserLogin('problem_user', 'secret_sauce')
+        LoginPage.fourthUserLogin('performance_glitch_user', 'secret_sauce')
+        LoginPage.fifthUserLogin('error_user', 'secret_sauce')
+        LoginPage.sixthUserLogin('visual_user', 'secret_sauce')
+        
         LoginPage.negativeLogin('incorrect','incorrect')
     });
 });
