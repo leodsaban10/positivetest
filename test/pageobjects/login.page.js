@@ -63,7 +63,7 @@ class LoginPage extends Page {
         await this.login(username, password)
         await expect(this.headerProducts).toExist();
     }
-    async sixthtUserLogin(username, password) {
+    async sixthUserLogin(username, password) {
         await this.login(username, password)
         await expect(this.headerProducts).toExist();
     }
