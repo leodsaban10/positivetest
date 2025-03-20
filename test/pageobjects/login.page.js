@@ -1,6 +1,6 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js';
-
+import { expect } from '@wdio/globals';
 /**
  * sub page containing specific selectors and methods for a specific page
  */
@@ -17,7 +17,15 @@ class LoginPage extends Page {
     }
 
     get btnSubmit () {
-        return $('button[type="submit"]');
+        return $('#login-button');
+    }
+
+    get headerProducts () {
+        return $('//span[@data-test="title"][contains(text(), "Products")]');
+    }
+
+    get errorMessage () {
+        return $('//h3[@data-test="error"][contains(text(), "Epic sadface: Username and password do not match any user in this service")]');
     }
 
     /**
@@ -29,6 +37,17 @@ class LoginPage extends Page {
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
     }
+
+    async negativeLogin(username, password) {
+        await this.login(username, password)
+        await expect(this.errorMessage).toExist();
+    }
+
+    async positiveLogin(username, password) {
+        await this.login(username, password)
+        await expect(this.headerProducts).toExist();
+    }
+
 
     /**
      * overwrite specific options to adapt it to page object
