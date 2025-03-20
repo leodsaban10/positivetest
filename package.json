@@ -1,0 +1,10 @@
+{
+  "name": "positivetest",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/cli": "^9.12.1",
+    "@wdio/local-runner": "^9.12.1",
+    "@wdio/mocha-framework": "^9.12.1",
+    "@wdio/spec-reporter": "^9.11.0"
+  }
+}
